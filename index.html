@@ -1,8 +1,3 @@
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +9,6 @@
     <link rel="icon" href="https://files.catbox.moe/n9gha7.png" type="image/x-icon">
 
     <style>
-        /* Style for full-page embedding */
         html, body {
             margin: 0;
             padding: 0;
@@ -37,7 +31,7 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            object-fit: cover; /* Stretch the image to fill the screen */
+            object-fit: cover;
         }
 
         .text-box {
@@ -53,10 +47,26 @@
         }
     </style>
 </head>
-<body>
+<body onclick="changeImage()">
     <div class="container">
-        <img src="https://files.catbox.moe/gkj2p6.png" alt="Jeremy Face Reveal" class="image">
+        <img id="image" src="https://files.catbox.moe/gkj2p6.png" alt="Jeremy Face Reveal" class="image">
         <div class="text-box">ameer Face Reveal</div>
     </div>
+
+    <script>
+        const images = [
+            "https://files.catbox.moe/gkj2p6.png",
+            "https://files.catbox.moe/m2vizx.png",
+            "https://files.catbox.moe/eoi9fw.png",
+            "https://files.catbox.moe/klwb73.png",
+            "https://files.catbox.moe/0o8cnq.png"
+        ];
+        let index = 0;
+
+        function changeImage() {
+            index = (index + 1) % images.length;
+            document.getElementById("image").src = images[index];
+        }
+    </script>
 </body>
 </html>
